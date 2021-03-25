@@ -5,8 +5,8 @@ package second.gradle;
 
 public class App {
     public String getGreeting() {
-        // return "Hello World!2";
-        return null;
+        return "Hello World!66";
+        // return null;
     }
 
     public static void main(String[] args) {
