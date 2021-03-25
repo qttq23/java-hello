@@ -5,18 +5,18 @@ pipeline {
     {
     	stage('unit Test') {
             steps {
-                bat "gradle -v"
+                bat "gradlew test"
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Building..'
+                bat 'gradlew build'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'gradlew run'
             }
         }
         stage('Deploy') {
