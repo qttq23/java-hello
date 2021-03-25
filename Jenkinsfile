@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat 'Xcopy /I /E "D:\\multi\\java\\second-gradle\\app\\build\\distributions"  "D:\\multi\\output\\src2" '
+                bat 'Xcopy /I /E ".\\app\\build\\distributions"  "D:\\multi\\output" '
             }
         }
     }
