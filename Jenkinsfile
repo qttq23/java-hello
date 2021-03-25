@@ -5,7 +5,7 @@ pipeline {
     {
     	stage('unit Test') {
             steps {
-                echo 'unit Testing..2'
+                bat "gradle -v"
             }
         }
 
