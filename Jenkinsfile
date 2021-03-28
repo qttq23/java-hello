@@ -1,27 +1,29 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'gradle' }
+    }
 
     stages 
     {
     	stage('unit Test') {
             steps {
-                bat "gradlew test"
+                sh "gradlew test"
             }
         }
 
         stage('Build') {
             steps {
-                bat 'gradlew build'
+                sh 'gradlew build'
             }
         }
         stage('Test') {
             steps {
-                bat 'gradlew run'
+                sh 'gradlew run'
             }
         }
         stage('Deploy') {
             steps {
-                bat 'Xcopy /I /E ".\\app\\build\\distributions"  "D:\\multi\\output" '
+                sh 'gradle -version'
             }
         }
     }
