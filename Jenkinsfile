@@ -5,20 +5,26 @@ pipeline {
 
     stages 
     {
+        stage('set up permission') {
+            steps {
+                sh "chmod +x gradlew"
+            }
+        }
+        
     	stage('unit Test') {
             steps {
-                sh "gradlew test"
+                sh "./gradlew test"
             }
         }
 
         stage('Build') {
             steps {
-                sh 'gradlew build'
+                sh './gradlew build'
             }
         }
         stage('Test') {
             steps {
-                sh 'gradlew run'
+                sh './gradlew run'
             }
         }
         stage('Deploy') {
